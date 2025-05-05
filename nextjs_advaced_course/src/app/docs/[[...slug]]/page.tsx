@@ -8,7 +8,10 @@ export default async function DocsPage({
   if (!slug) {
     return <h1>Docs page</h1>;
   }
-  if (slug.length >= 4) {
+  if (slug[3] === "error") {
+    throw Error(" its longer then 4 ");
+  }
+  if (slug.length >= 5) {
     notFound();
   }
   return (

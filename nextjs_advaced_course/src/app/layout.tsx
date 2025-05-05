@@ -28,11 +28,11 @@ const linksArray = [
 
   { name: "Login", href: "/login" },
 
-  { name: "Register", href: "/regiater" },
+  { name: "Register", href: "/register" },
 
-  { name: "read artical", href: "/" },
+  { name: "read artical", href: "/artical/news-1" },
 
-  { name: "Home", href: "/artical/news-1" },
+  { name: "Order product page", href: "/order-product" },
 ];
 
 export default function RootLayout({
