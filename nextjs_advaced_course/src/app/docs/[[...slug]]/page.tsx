@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 export default async function DocsPage({
   params,
 }: {
@@ -6,6 +7,9 @@ export default async function DocsPage({
   const { slug } = await params;
   if (!slug) {
     return <h1>Docs page</h1>;
+  }
+  if (slug.length >= 4) {
+    notFound();
   }
   return (
     <>
