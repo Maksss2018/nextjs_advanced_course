@@ -1,23 +1,27 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
-export default async function ArticalPage({
-  params,
-  searchParams,
-}: {
+type Props = {
   params: Promise<{ articalId: string }>;
   searchParams: Promise<{ lang: string }>;
-}) {
+};
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { articalId } = await params;
+  const { lang = "en" } = await searchParams;
+
+  return {
+    title: `${lang} ${articalId}`,
+  };
+}
+
+export default async function ArticalPage({ params, searchParams }: Props) {
   const { articalId } = await params;
   const { lang } = await searchParams;
-  if (!articalId) {
-    return (
-      <>
-        <h1>Articals page</h1>
-        <Link href="/artical/news-1">read "news 1"</Link>
-        <Link href="/artical/news-2">read "news 2"</Link>
-      </>
-    );
-  }
+
   return (
     <>
       <h1>Artical {articalId} page </h1>

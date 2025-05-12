@@ -30,7 +30,7 @@ const linksArray = [
 
   { name: "Register", href: "/register" },
 
-  { name: "read artical", href: "/artical/news-1" },
+  { name: "read artical", href: "/artical" },
 
   { name: "Order product page", href: "/order-product" },
 ];
