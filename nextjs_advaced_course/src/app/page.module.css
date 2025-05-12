@@ -19,7 +19,12 @@
 .header a {
   padding: 16px;
 }
-
+.header a.red-link {
+  color: red;
+}
+.header a.black-link {
+  color: black;
+}
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
